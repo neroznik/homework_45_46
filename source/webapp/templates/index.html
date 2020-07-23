@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<div class="container">
+    <h1>My first Blog</h1>
+    {% for article in articles %}
+        <h3>{{ article.pk }}. {{ article.title }}</h3>
+        <div>{{ article.text }}</div>
+        <h5>{{ article.author }}</h5>
+    {% endfor %}
+    <a href="/articles/add">Добавить статью</a>
+    
+</div>
+</body>
+</html>
