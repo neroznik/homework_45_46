@@ -11,14 +11,17 @@
 </head>
 <body>
 <div class="container">
-    <h1>My first Blog</h1>
-    {% for article in articles %}
-        <h3>{{ article.pk }}. {{ article.title }}</h3>
-        <div>{{ article.text }}</div>
-        <h5>{{ article.author }}</h5>
+<h1>My Tasks </h1>
+
+    <table>
+   <tr><th>Number</th><th>Task</th><th>Description</th><th>Status</th><th>Data to finish</th></tr>
+    {% for Task in Tasks %}
+        <tr><td>{{ Task.pk }}.</td><td> {{ Task.task }}</td> <td>{{ Task.description }}</td> <td>{{ Task.status }}</td><td>{{ Task.date_proccessing}}</td></tr>
     {% endfor %}
-    <a href="/articles/add">Добавить статью</a>
+    </table>
+    <a href="#"> Add task</a>
     
-</div>
+    
+
 </body>
 </html>

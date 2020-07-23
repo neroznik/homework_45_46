@@ -2,7 +2,7 @@ from django.utils import timezone
 from django.db import models
 
 
-class Tasks(models.Model):
+class ToDo_Task(models.Model):
     status_choices = [('new', 'Новая'), ('in_progress', 'В процессе'), ('done', 'Сделано')]
 
     task = models.CharField(max_length=100, null=False, blank=False, verbose_name='Задача')
@@ -11,8 +11,8 @@ class Tasks(models.Model):
     date_proccessing = models.DateField(default=timezone.now().strftime("%Y-%m-%d"), verbose_name='Дата выполнения', blank = False)
 
     class Meta:
-        verbose_name = ("Task")
-        verbose_name_plural = ("Tasks")
+        verbose_name = "Task"
+        verbose_name_plural = "Tasks"
 
 
     def __str__(self):
