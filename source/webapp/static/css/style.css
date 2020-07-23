@@ -4,3 +4,9 @@ body {
     color: darkslategray;
     text-align: left ;
 }
+
+table_i {
+    border-collapse: collapse;
+    border: 2px solid;
+    text-align: left ;
+}
