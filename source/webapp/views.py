@@ -5,16 +5,19 @@ from webapp.models import ToDo_Task
 
 def index_view(request):
     task = ToDo_Task.objects.all()
-    print(task)
     return render(request, 'index.html', context={'Tasks': task})
 
 def add_task(request):
-    task = ToDo_Task.objects.all()
+    if request.method == 'GET':
+        return render(request, 'add.html')
+    elif request.method == 'POST':
+        task = ToDo_Task.objects.all()
+        task.task = request.POST.get('task')
+        task.description = request.POST.get('description')
+        task.status = request.POST.get('status')
+        task.date_proccessing = request.POST.get('data_proccessing')
 
-    if request.method == "POST":
-        task.task = request.POST['Task']
-        task.description = request.POST['Description']
-        task.status = request.POST['Status']
-        task.date_proccessing = str(request.POST['Data_proccessing']
-        task.save()
-    return render(request, 'add.html', context={'Tasks': task})
+        task.create()
+        print(task)
+    return render(request, 'index.html', context={'Tasks': task})
+

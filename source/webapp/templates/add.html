@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Calculate</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <script type="text/javascript" src={% static "js/jquery.min.js" %}></script>
+    <script type="text/javascript" src={% static "js/main.js" %}></script>
+
+</head>
+<body>
+<h1>Calculator</h1>
+
+<form action="/" method="post">
+   {% csrf_token %}
+
+  <label>Task:</label><br/>
+   <input type="text" name="task"/><br/>
+
+  <label>Description:</label><br/>
+   <input type="text" name="description"/><br/>
+
+
+
+    <select onchange="myfunction(this.value);" name="status">
+      <option value="#">Choice status</option>
+      <option value="new">Новя</option>
+      <option value="in_in_progress">В процессе</option>
+      <option value="done">Выполненная</option>
+    </select>
+  <br/> <label>Date for finish:</label><br/>
+   <input type="date" name="data_proccessing"/><br/>
+
+
+ <input type="submit" value="Send"/>
+
+
+</form>
+</body>
+</html>
