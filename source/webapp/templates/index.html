@@ -1,27 +1,17 @@
-{% load staticfiles %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-</head>
-<body>
-<div class="container">
-<h1>My Tasks </h1>
-<div class = table_i>
-    <table>
-   <tr><th>Number</th><th>Task</th><th>Description</th><th>Status</th><th>Data to finish</th></tr>
-    {% for Task in Tasks %}
-        <tr><td>{{ Task.pk }}.</td><td> {{ Task.task }}</td> <td>{{ Task.description }}</td> <td>{{ Task.status }}</td><td>{{ Task.date_proccessing}}</td></tr>
-    {% endfor %}
-    </table>
-    <a href="/add/"> Add task</a>
-</div>
-    
 
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}ToDo list{% endblock %}
+
+{% block content %}
+    <h1>Мои задачи:</h1>
+    {% for Task in Tasks %}
+        <h3><a href="{% url "task_view" Task.pk %}">{{ Task.task }}</a></h3>
+        <div>{{ Task.description }}</div>
+        <p>Статус: ({{ Task.get_status_display }})</p>
+        <p>Дедлайн: {{ Task.date_proccessing }} </p>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+

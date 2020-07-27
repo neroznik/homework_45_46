@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <title>Calculate</title>
+   <title>Add task</title>
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <script type="text/javascript" src={% static "js/jquery.min.js" %}></script>
     <script type="text/javascript" src={% static "js/main.js" %}></script>
@@ -14,28 +14,31 @@
 
 <h1>Add your task </h1>
 
-<form action="/" method="post">
+<form action="/task/add/" method="post">
    {% csrf_token %}
-
+<br/>
   <label>Task:</label><br/>
    <input type="text" name="task"/><br/>
-
+<br/>
   <label>Description:</label><br/>
-   <input type="text" name="description"/><br/>
+   <textarea name="description"/>   </textarea>
 
+<br/>
+<br/>
 
-
-    <select onchange="myfunction(this.value);" name="status">
-      <option value="#">Choice status</option>
-      <option value="new">Новя</option>
-      <option value="in_in_progress">В процессе</option>
-      <option value="done">Выполненная</option>
-    </select>
-  <br/> <label>Date for finish:</label><br/>
+    <label for="id-status">Status:</label><br/>
+    <select name="status" id="id-status">
+        {% for value, label in status_choices %}
+            <option value="{{ value }}">{{ label }}</option>
+            <br/>
+        {% endfor %}
+  </select>
+<br/>
+<br/>
+ <label>Date for finish:</label><br/>
    <input type="date" name="data_proccessing"/><br/>
 
-
- <input type="submit" value="Send"/>
+    <input type="submit" value="Send"/>
 
 
 </form>
