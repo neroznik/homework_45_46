@@ -1,0 +1,70 @@
+[
+{
+  "model": "webapp.tasks",
+  "pk": 1,
+  "fields": {
+    "task": "Task 1",
+    "description": "home work",
+    "status": "#",
+    "date_proccessing": "2020-07-27"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 2,
+  "fields": {
+    "task": "Task 2",
+    "description": "lecture",
+    "status": "in_progress",
+    "date_proccessing": "2020-07-29"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 3,
+  "fields": {
+    "task": "Task 3",
+    "description": "meeting",
+    "status": "in_progress",
+    "date_proccessing": "2020-07-08"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 4,
+  "fields": {
+    "task": "Task 4",
+    "description": "To\r\nDo \r\nLIST",
+    "status": "done",
+    "date_proccessing": "2020-07-08"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 6,
+  "fields": {
+    "task": "New Task",
+    "description": "New project",
+    "status": "in_progress",
+    "date_proccessing": "2020-10-29"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$IIimRsjg5pW4$va5Kf1NPh8CvYcJDQCG/ta/NVCdgNGCjfM4V89DAnWg=",
+    "last_login": "2020-07-27T10:01:40.791Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-07-23T12:13:36.279Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
