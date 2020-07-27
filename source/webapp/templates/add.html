@@ -1,17 +1,9 @@
-{% load staticfiles %}
-<!DOCTYPE html>
 
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Add task</title>
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <script type="text/javascript" src={% static "js/jquery.min.js" %}></script>
-    <script type="text/javascript" src={% static "js/main.js" %}></script>
+{% extends 'base.html' %}
 
-</head>
-<body>
-
+{% block title %}ToDo list{% endblock %}
+{% block content %}
+    <div class = 'block1'>
 <h1>Add your task </h1>
 
 <form action="/task/add/" method="post">
@@ -39,8 +31,6 @@
    <input type="date" name="data_proccessing"/><br/>
 
     <input type="submit" value="Send"/>
-
-
 </form>
-</body>
-</html>
+    </div>
+{% endblock %}

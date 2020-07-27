@@ -4,7 +4,7 @@
 {% block title %}ToDo list{% endblock %}
 
 {% block content %}
-    <h1>Мои задачи:</h1>
+    <div class = 'block1'><h1>Мои задачи:</h1>
     {% for Task in Tasks %}
         <h3><a href="{% url "task_view" Task.pk %}">{{ Task.task }}</a></h3>
         <div>{{ Task.description }}</div>
@@ -12,6 +12,7 @@
         <p>Дедлайн: {{ Task.date_proccessing }} </p>
         <hr>
     {% endfor %}
+    </div>
 {% endblock %}
 
 
