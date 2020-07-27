@@ -7,7 +7,7 @@
     <div class = 'block1'><h1>Мои задачи:</h1>
     {% for Task in Tasks %}
         <h3><a href="{% url "task_view" Task.pk %}">{{ Task.task }}</a></h3>
-        <div>{{ Task.description }}</div>
+        <div>{{ Task.description | linebreaks }}</div>
         <p>Статус: ({{ Task.get_status_display }})</p>
         <p>Дедлайн: {{ Task.date_proccessing }} </p>
         <hr>
