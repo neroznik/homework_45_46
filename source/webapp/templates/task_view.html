@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<div class="container">
+<h1>My Tasks </h1>
+<div class = table_i>
+    <table>
+   <tr><th>Number</th><th>Task</th><th>Description</th><th>Status</th><th>Data to finish</th></tr>
+    {% for Task in Tasks %}
+<tr><td>{{ Task.pk }}.</td><td> {{ Task.task }}</td> <td>{{ Task.description }}</td> <td>{{ Task.status }}</td><td>{{ Task.date_proccessing}}</td></tr>
+    {% endfor %}
+
+
+    </table>
+</div>
+
+
+</body>
+</html>
