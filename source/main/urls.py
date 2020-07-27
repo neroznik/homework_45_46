@@ -18,7 +18,7 @@ from django.urls import path
 from webapp.views import index_view, tasks_view, add_task
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name = 'admin'),
     path('', index_view, name='index'),
     path('task/<int:pk>/', tasks_view, name='task_view'),
     path('task/add/', add_task, name='task_create')
