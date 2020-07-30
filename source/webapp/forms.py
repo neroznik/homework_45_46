@@ -4,7 +4,7 @@ from .models import STATUS_CHOICES
 default_status = STATUS_CHOICES[0][0]
 
 
-BROWSER_DATETIME_FORMAT = '%Y-%m-%d
+BROWSER_DATETIME_FORMAT = '%Y-%m-%d'
 
 
 class TasksForm(forms.Form):
