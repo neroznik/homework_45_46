@@ -19,7 +19,7 @@ def add_task(request):
         return render(request, 'add.html', context={'status_choices': STATUS_CHOICES})
     elif request.method == 'POST':
         task = request.POST.get('task')
-        description = request.POST.get('description')
+        description = request.POST.get('description').replace('/n', '<br>')
         status = request.POST.get('status')
         date_proccessing = request.POST.get('data_proccessing')
         if date_proccessing != '':
