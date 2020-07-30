@@ -52,12 +52,12 @@ def task_update_view(request, pk):
     elif request.method == 'POST':
         form = TasksForm(data=request.POST)
         if form.is_valid():
-            form.task = form.cleaned_data['task']
-            form.description = form.cleaned_data['description']
-            form.status = form.cleaned_data['status']
-            form.date_proccessing = form.cleaned_data['date_proccessing']
-            form.save()
-            return redirect('task_view', pk=form.pk)
+            task.task = form.cleaned_data['task']
+            task.description = form.cleaned_data['description']
+            task.status = form.cleaned_data['status']
+            task.date_proccessing = form.cleaned_data['date_proccessing']
+            task.save()
+            return redirect('task_view', pk = task.pk)
         else:
             return render(request, 'task_update.html', context={
                 'Tasks': task,
