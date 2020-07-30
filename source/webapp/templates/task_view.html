@@ -3,6 +3,11 @@
 
 {% block title %}Task{% endblock %}
 
+{% block menu %}
+    <li><a href="{% url 'task_update' Tasks.pk %}">Update</a></li>
+    <li><a href="{% url 'task_delete' Tasks.pk %}">Delete</a></li>
+{% endblock %}
+
 {% block content %}
     <div class="block1">
     <h1>{{ Tasks.task }}</h1>

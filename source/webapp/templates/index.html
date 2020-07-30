@@ -9,7 +9,9 @@
         <h3><a href="{% url "task_view" Task.pk %}">{{ Task.task }}</a></h3>
         <div>{{ Task.description | linebreaks }}</div>
         <p>Статус: ({{ Task.get_status_display }})</p>
-        <p>Дедлайн: {{ Task.date_proccessing }} </p>
+        <p>Дедлайн: {{ Task.date_proccessing | date:"d.m.Y" }} </p>
+        <p><a href="{% url 'task_update' Task.pk %}">Update</a></p>
+        <p><a href="{% url 'task_delete' Task.pk %}">Delete</a></p>
         <hr>
     {% endfor %}
     </div>
